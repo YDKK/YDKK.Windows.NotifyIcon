@@ -20,8 +20,8 @@ var icon = Icon.FromFile("path-to-icon.ico");
 var notifyIcon = new NotifyIcon("Tooltip-Text", icon);
 notifyIcon.LButtonDoubleClick += (args) =>
 {
-	Console.WriteLine("NotifyIcon double clicked!");
-	Console.WriteLine($"Mouse cursor position: ({args.xPos}, {args.yPos})");
+    Console.WriteLine("NotifyIcon double clicked!");
+    Console.WriteLine($"Mouse cursor position: ({args.xPos}, {args.yPos})");
 };
 ```
 
@@ -62,9 +62,7 @@ NotifyIcon.MenuCommand += (args) =>
     switch (args)
     {
         case exitCommandId:
-            {
-                Console.WriteLine("Exit menu command selected.")
-            }
+            Console.WriteLine("Exit menu command selected.")
             break;
     }
 };
