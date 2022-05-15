@@ -71,7 +71,7 @@ NotifyIcon.MenuCommand += (args) =>
 
 ## Note
 
-Build for the `Any CPU` platform is not supported at this time.
+At this time, supported build platform is `x64` only.
 
 ## License
 
