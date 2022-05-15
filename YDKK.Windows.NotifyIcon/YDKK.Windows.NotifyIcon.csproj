@@ -28,8 +28,8 @@
 		  <Pack>True</Pack>
 		  <PackagePath>\</PackagePath>
 		</None>
-		<None Include="bin\x64\Release\net6.0-windows\YDKK.Windows.NotifyIcon.dll" Pack="true" PackagePath="runtimes\win-x64\lib\net6.0-windows7.0\YDKK.Windows.NotifyIcon.dll" />
-		<None Include="bin\x86\Release\net6.0-windows\YDKK.Windows.NotifyIcon.dll" Pack="true" PackagePath="runtimes\win-x86\lib\net6.0-windows7.0\YDKK.Windows.NotifyIcon.dll" />
+		<None Include="bin\x64\Release\net6.0-windows7.0\YDKK.Windows.NotifyIcon.dll" Pack="true" PackagePath="runtimes\win-x64\lib\net6.0-windows7.0\YDKK.Windows.NotifyIcon.dll" />
+		<None Include="bin\x86\Release\net6.0-windows7.0\YDKK.Windows.NotifyIcon.dll" Pack="true" PackagePath="runtimes\win-x86\lib\net6.0-windows7.0\YDKK.Windows.NotifyIcon.dll" />
 	</ItemGroup>
 
 </Project>
