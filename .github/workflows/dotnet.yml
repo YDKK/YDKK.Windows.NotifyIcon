@@ -1,0 +1,27 @@
+name: Publish nuget package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Build x64
+      run: dotnet build -c Release /p:Platform=x64 --no-incremental
+    - name: Build x86
+      run: dotnet build -c Release /p:Platform=x86 --no-incremental
+    - name: Pack
+      run: dotnet pack --no-build -c Release -o ./
+    - name: Publish
+      run: dotnet nuget push ./*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
