@@ -2,7 +2,9 @@
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.WindowsAndMessaging;
+#if !REFERENCE
 using Windows.Win32.UI.Shell;
+#endif
 using Microsoft.Win32.SafeHandles;
 
 namespace YDKK.Windows
@@ -48,7 +50,9 @@ namespace YDKK.Windows
 
         private HWND hWnd;
         private WNDCLASSW wc;
+#if !REFERENCE
         private NOTIFYICONDATAW NotifyIconData;
+#endif
         private readonly Icon Icon;
 
         private bool IsDisposed = false;
@@ -77,6 +81,7 @@ namespace YDKK.Windows
             CreateMessageWindow();
 
             tooltip += '\0';
+#if !REFERENCE
             var szTip = new NOTIFYICONDATAW.__char_128();
             tooltip.CopyTo(szTip.AsSpan());
 
@@ -92,6 +97,7 @@ namespace YDKK.Windows
                 uCallbackMessage = CallbackMessageId,
                 uFlags = NOTIFY_ICON_DATA_FLAGS.NIF_TIP | NOTIFY_ICON_DATA_FLAGS.NIF_MESSAGE | (Icon != null ? NOTIFY_ICON_DATA_FLAGS.NIF_ICON : 0),
             };
+#endif
 
             AddNotifyIcon();
         }
@@ -199,13 +205,17 @@ namespace YDKK.Windows
 
         private void AddNotifyIcon()
         {
+#if !REFERENCE
             PInvoke.Shell_NotifyIcon(NOTIFY_ICON_MESSAGE.NIM_ADD, NotifyIconData);
             PInvoke.Shell_NotifyIcon(NOTIFY_ICON_MESSAGE.NIM_SETVERSION, NotifyIconData);
+#endif
         }
 
         private void DeleteNotifyIcon()
         {
+#if !REFERENCE
             PInvoke.Shell_NotifyIcon(NOTIFY_ICON_MESSAGE.NIM_DELETE, NotifyIconData);
+#endif
         }
 
         public void Dispose()

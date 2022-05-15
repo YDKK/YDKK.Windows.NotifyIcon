@@ -69,6 +69,10 @@ NotifyIcon.MenuCommand += (args) =>
 
 ```
 
+## Note
+
+Build for the `Any CPU` platform is not supported at this time.
+
 ## License
 
 MIT
