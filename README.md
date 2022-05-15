@@ -46,14 +46,14 @@ fixed (char* ptr = exitLabel)
     info.dwTypeData = ptr;
 }
 
-PInvoke.InsertMenuItem(PopupMenu, 0, true, &info);
+PInvoke.InsertMenuItem(menu, 0, true, &info);
 
 // Show context menu
 notifyIcon.RButtonUp += (args) =>
 {
     var hWnd = (HWND)notifyIcon.WindowHandle;
     PInvoke.SetForegroundWindow(hWnd);
-    PInvoke.TrackPopupMenuEx(PopupMenu, (uint)TRACK_POPUP_MENU_FLAGS.TPM_LEFTALIGN, args.xPos, args.yPos, hWnd);
+    PInvoke.TrackPopupMenuEx(menu, (uint)TRACK_POPUP_MENU_FLAGS.TPM_LEFTALIGN, args.xPos, args.yPos, hWnd);
 };
 
 // Receive results
