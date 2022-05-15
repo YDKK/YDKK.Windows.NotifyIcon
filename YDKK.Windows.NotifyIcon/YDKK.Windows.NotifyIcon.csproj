@@ -6,6 +6,7 @@
 		<Nullable>disable</Nullable>
 		<Platforms>x64;x86</Platforms>
 		<PackageId>YDKK.Windows.NotifyIcon</PackageId>
+		<Version>1.0.0</Version>
 		<Authors>YDKK</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
